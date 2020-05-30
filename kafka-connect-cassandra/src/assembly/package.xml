@@ -1,0 +1,54 @@
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2
+          http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+    <!-- Assembles a packaged version targeting OS installation. -->
+    <id>package</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <files>
+        <file>
+            <source>config/manifest.json</source>
+            <outputDirectory>${project.artifactId}/</outputDirectory>
+        </file>
+    </files>
+    <fileSets>
+        <fileSet>
+            <directory>${project.basedir}/doc</directory>
+            <outputDirectory>${project.artifactId}/doc</outputDirectory>
+            <includes>
+                <include>**/**</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/assets</directory>
+            <outputDirectory>${project.artifactId}/assets</outputDirectory>
+            <includes>
+                <include>*</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/config</directory>
+            <outputDirectory>${project.artifactId}/etc</outputDirectory>
+            <includes>
+                <include>quickstart-s3.properties</include>
+                <include>quickstart-schema-source-for-s3.properties</include>
+            </includes>
+        </fileSet>
+       
+
+    </fileSets>
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>${project.artifactId}/lib</outputDirectory>
+            <useProjectArtifact>true</useProjectArtifact>
+            <useTransitiveFiltering>false</useTransitiveFiltering>
+            <excludes>
+                <exclude>org.apache.kafka:connect-api</exclude>
+                <exclude>org.apache.kafka:connect-json</exclude>
+            </excludes>
+        </dependencySet>
+    </dependencySets>
+</assembly>

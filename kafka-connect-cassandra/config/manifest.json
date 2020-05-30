@@ -1,0 +1,9 @@
+{
+  "name" : "kafka-connect-cassandra",
+  "version" : "1.0.0-SNAPSHOT",
+  "owner" : {
+    "name" : "superkei",
+    "username": "superkei"
+  },
+  "component_types" : [ "sink" ]
+}

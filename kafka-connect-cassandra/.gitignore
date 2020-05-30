@@ -1,0 +1,40 @@
+target
+!.mvn/wrapper/maven-wrapper.jar
+
+### SVN ###
+.svn
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+
+**/application.local.properties
+**/quartz.local.properties
+
+/temp/
+
+generated
+asset-mgmt-ws/src/main/webapp/jsondoc.json
+asset-mgmt-portlet/src/main/groovy/role/Connections.groovy
+
+/asset-mgmt-ws/src/main/groovy/bms_dataPatch/updateMY01MeasurePoint.sql
